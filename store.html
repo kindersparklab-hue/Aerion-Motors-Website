@@ -8,9 +8,8 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-    <img src="Assets/AERION MOTORS.png" class="brand-logo" alt="AERION Logo" id="home-logo-store">
+    <img src="Assets/AERION MOTORS.png" class="brand-logo" id="home-logo-store">
     <nav>
         <ul>
             <li><a href="index.html#home">Home</a></li>
@@ -21,91 +20,70 @@
     </nav>
 </header>
 
-<!-- STORE PRODUCTS -->
 <section id="products-store">
     <h2>Our Products</h2>
 
     <div class="product-grid">
 
-        <div class="product" onclick="openProduct('Front Drift', 'Assets/Front Drift.png', 'Carbon fiber spoiler, LED headlights, high performance drift kit')">
-            <img src="Assets/Front Drift.png" alt="Front Drift">
-            <h3>Front Drift</h3>
-        </div>
-
-        <div class="product" onclick="openProduct('Rear Drift', 'Assets/Rear Drift.png', 'Titanium sport exhaust, turbo air filter, high airflow performance')">
-            <img src="Assets/Rear Drift.png" alt="Rear Drift">
-            <h3>Rear Drift</h3>
-        </div>
-
-        <div class="product" onclick="openProduct('Side Drift', 'Assets/Side Drift.png', 'Carbon fiber spoiler, racing steering wheel, drift body kit')">
-            <img src="Assets/Side Drift.png" alt="Side Drift">
-            <h3>Side Drift</h3>
-        </div>
-
-        <!-- New products (based on your Assets folder) -->
-        <div class="product" onclick="openProduct('Carbon Fiber Spoiler', 'Assets/Carbon Fiber Spoiler.png', 'Premium carbon fiber spoiler for aerodynamic performance')">
-            <img src="Assets/Carbon Fiber Spoiler.png" alt="Carbon Fiber Spoiler">
+        <div class="product" onclick="openProduct('Carbon Fiber Spoiler','Assets/Carbon Fiber Spoiler.png','Premium lightweight spoiler')">
+            <img src="Assets/Carbon Fiber Spoiler.png">
             <h3>Carbon Fiber Spoiler</h3>
         </div>
 
-        <div class="product" onclick="openProduct('Turbo Air Filter', 'Assets/Turbo Air Filter.png', 'High-pressure turbo air filter for maximum airflow')">
-            <img src="Assets/Turbo Air Filter.png" alt="Turbo Air Filter">
+        <div class="product" onclick="openProduct('Turbo Air Filter','Assets/Turbo Air Filter.png','High pressure turbo filter')">
+            <img src="Assets/Turbo Air Filter.png">
             <h3>Turbo Air Filter</h3>
         </div>
 
-        <div class="product" onclick="openProduct('Titanium Sport Exhaust', 'Assets/Titanium Sport Exhaust.png', 'Ultra-lightweight titanium exhaust system')">
-            <img src="Assets/Titanium Sport Exhaust.png" alt="Titanium Sport Exhaust">
+        <div class="product" onclick="openProduct('Titanium Sport Exhaust','Assets/Titanium Sport Exhaust.png','Ultra-light titanium exhaust')">
+            <img src="Assets/Titanium Sport Exhaust.png">
             <h3>Titanium Sport Exhaust</h3>
         </div>
 
-        <div class="product" onclick="openProduct('Racing Steering Wheel', 'Assets/Racing Steering Wheel.png', 'Drift-tuned racing steering wheel')">
-            <img src="Assets/Racing Steering Wheel.png" alt="Racing Steering Wheel">
-            <h3>Racing Steering Wheel</h3>
-        </div>
-
-        <div class="product" onclick="openProduct('LED Headlights', 'Assets/LED Headlights.png', 'High-intensity LED headlights')">
-            <img src="Assets/LED Headlights.png" alt="LED Headlights">
+        <div class="product" onclick="openProduct('LED Headlights','Assets/LED Headlights.png','High intensity headlights')">
+            <img src="Assets/LED Headlights.png">
             <h3>LED Headlights</h3>
         </div>
 
-        <div class="product" onclick="openProduct('Carbon Fiber Texture', 'Assets/Carbon Fiber Texture.png', 'Carbon fiber finish for interior/exterior')">
-            <img src="Assets/Carbon Fiber Texture.png" alt="Carbon Fiber Texture">
+        <div class="product" onclick="openProduct('Racing Steering Wheel','Assets/Racing Steering Wheel.png','Sport steering wheel')">
+            <img src="Assets/Racing Steering Wheel.png">
+            <h3>Racing Steering Wheel</h3>
+        </div>
+
+        <div class="product" onclick="openProduct('Carbon Fiber Texture','Assets/Carbon Fiber Texture.png','Carbon fiber finish wrap')">
+            <img src="Assets/Carbon Fiber Texture.png">
             <h3>Carbon Fiber Texture</h3>
         </div>
 
     </div>
 </section>
 
-<!-- PRODUCT MODAL -->
 <div id="product-modal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeProduct()">&times;</span>
         <h2 id="modal-title"></h2>
-        <img id="modal-image" alt="">
+        <img id="modal-image">
         <p id="modal-details"></p>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <p>&copy; 2025 AERION MOTORS. All rights reserved.</p>
 </footer>
 
 <script>
-    function openProduct(title, imgSrc, details){
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-image').src = imgSrc;
-        document.getElementById('modal-details').innerText = details;
-        document.getElementById('product-modal').style.display = 'flex';
-    }
-    function closeProduct(){
-        document.getElementById('product-modal').style.display = 'none';
-    }
-
-    // Logo → back to home page
-    document.getElementById("home-logo-store").addEventListener("click", () => {
-        window.location.href = "index.html#home";
-    });
+function openProduct(t, img, d){
+    document.getElementById("modal-title").innerText = t;
+    document.getElementById("modal-image").src = img;
+    document.getElementById("modal-details").innerText = d;
+    document.getElementById("product-modal").style.display = "flex";
+}
+function closeProduct(){
+    document.getElementById("product-modal").style.display = "none";
+}
+document.getElementById("home-logo-store").addEventListener("click", ()=>{
+    window.location.href = "index.html#home";
+});
 </script>
 
 </body>

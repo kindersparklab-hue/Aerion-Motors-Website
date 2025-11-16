@@ -1,42 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AERION MOTORS</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AERION MOTORS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- VIDEO INTRO -->
-<div id="intro-video">
-  <video autoplay muted playsinline id="drift-video">
-    <source src="Assets/drift-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <img src="Assets/AERION MOTORS.png" class="brand-logo" alt="AERION Logo">
-</div>
-
-<!-- MAIN STORE PREVIEW -->
-<div id="store" style="display:none;">
-  <header>
-    <img src="Assets/AERION MOTORS.png" class="logo">
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="store.html">Store</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <img src="Assets/HERO CAR IMAGE.png" class="hero-car">
-    <div class="hero-text">
-      <h1>AERION X-9</h1>
-      <p>Born for Speed. Built for Legends.</p>
-      <a href="store.html" class="buy-button">Shop Now</a>
+    <!-- INTRO VIDEO -->
+    <div id="intro-video">
+        <video autoplay muted playsinline id="drift-video">
+            <source src="Assets/drift-video.mp4" type="video/mp4">
+        </video>
+        <audio id="intro-audio">
+            <source src="Assets/drift-sound.mp3" type="audio/mp3">
+        </audio>
+        <img src="Assets/AERION MOTORS.png" class="brand-logo" alt="AERION Logo" id="logo">
     </div>
-  </section>
-</div>
 
-<script src="script.js"></script>
+    <!-- MAIN SITE -->
+    <div id="main-site" style="display:none;">
+        <!-- HEADER -->
+        <header>
+            <img src="Assets/AERION MOTORS.png" class="brand-logo" alt="AERION Logo" id="home-logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- HOME SECTION -->
+        <section id="home">
+            <div class="hero">
+                <img src="Assets/HERO CAR IMAGE.png" alt="Hero Car">
+                <h1>Born for Speed. Built for Legends.</h1>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product" onclick="openProduct('Front Drift', 'Assets/Front Drift.png', 'Carbon fiber spoiler, LED headlights, high performance')">
+                    <img src="Assets/Front Drift.png" alt="Front Drift">
+                    <h3>Front Drift</h3>
+                </div>
+                <div class="product" onclick="openProduct('Rear Drift', 'Assets/Rear Drift.png', 'Titanium sport exhaust, turbo air filter')">
+                    <img src="Assets/Rear Drift.png" alt="Rear Drift">
+                    <h3>Rear Drift</h3>
+                </div>
+                <div class="product" onclick="openProduct('Side Drift', 'Assets/Side Drift.png', 'Carbon fiber spoiler, racing steering wheel')">
+                    <img src="Assets/Side Drift.png" alt="Side Drift">
+                    <h3>Side Drift</h3>
+                </div>
+                <!-- New Products placeholders -->
+                <div class="product" onclick="openProduct('New Product 1', 'Assets/Carbon Fiber Texture.png', 'Details coming soon')">
+                    <img src="Assets/Carbon Fiber Texture.png" alt="New Product 1">
+                    <h3>New Product 1</h3>
+                </div>
+                <div class="product" onclick="openProduct('New Product 2', 'Assets/Turbo Air Filter.png', 'Details coming soon')">
+                    <img src="Assets/Turbo Air Filter.png" alt="New Product 2">
+                    <h3>New Product 2</h3>
+                </div>
+                <div class="product" onclick="openProduct('New Product 3', 'Assets/Titanium Sport Exhaust.png', 'Details coming soon')">
+                    <img src="Assets/Titanium Sport Exhaust.png" alt="New Product 3">
+                    <h3>New Product 3</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US -->
+        <section id="about">
+            <h2>About AERION MOTORS</h2>
+            <p>AERION MOTORS is a high-performance automotive brand blending Japanese tuning culture with world-class racing engineering. Precision, power, and futuristic design define every model we create.</p>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: +971551517478</p>
+            <p>WhatsApp: <a href="https://wa.me/971551517478" target="_blank">Chat with us</a></p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 AERION MOTORS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProduct()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

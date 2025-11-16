@@ -1,8 +1,8 @@
 // Intro animation sequence with 3 drift frames
 const driftFrames = [
-  'assets/Side Drift.png',
-  'assets/Front Drift.png',
-  'assets/Rear Drift.png'
+  'Assets/Side%20Drift.png',
+  'Assets/Front%20Drift.png',
+  'Assets/Rear%20Drift.png'
 ];
 
 const driftCar = document.getElementById('drift-car');
@@ -14,10 +14,11 @@ let frameIndex = 0;
 driftCar.src = driftFrames[frameIndex];
 driftCar.style.opacity = 1;
 
-// Switch frames every 1.2 seconds
+// Animate drift frames with scale/rotation effect
 const driftInterval = setInterval(() => {
   frameIndex++;
   if(frameIndex < driftFrames.length){
+    driftCar.style.transform = `translateX(${frameIndex * 100}px) rotate(${frameIndex * 15}deg)`;
     driftCar.src = driftFrames[frameIndex];
   } else {
     clearInterval(driftInterval);

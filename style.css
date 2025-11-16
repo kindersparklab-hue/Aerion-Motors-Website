@@ -10,25 +10,27 @@ body {
 #intro {
   width: 100vw;
   height: 100vh;
-  background: url('Assets/Dark%20Garage%20Lighting%20Background.png') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: url('Assets/Dark Garage Lighting Background.png') center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
 
 .drift-car {
-  width: 500px;
+  width: 600px;
   position: absolute;
-  opacity: 0;
-  transition: transform 1s ease, opacity 0.8s ease;
+  top: 50%;
+  left: -700px; /* start offscreen */
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.05s linear;
 }
 
 .brand-title {
-  font-size: 3rem;
-  color: #D31024;
   position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20%;
+  font-size: 4rem;
+  color: #D31024;
   opacity: 0;
   transition: opacity 1.5s ease;
 }
@@ -92,4 +94,11 @@ header {
 }
 
 .item:hover {
-  transform: transl
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 6px;
+}

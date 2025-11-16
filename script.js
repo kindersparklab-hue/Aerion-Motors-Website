@@ -1,34 +1,35 @@
-// Intro animation sequence with 3 drift frames
-const driftFrames = [
-  'Assets/Side%20Drift.png',
-  'Assets/Front%20Drift.png',
-  'Assets/Rear%20Drift.png'
-];
-
 const driftCar = document.getElementById('drift-car');
 const brandTitle = document.getElementById('brand-title');
 
-let frameIndex = 0;
+let posX = -700; // starting offscreen
+let rotation = 0;
+let speed = 15; // pixels per frame
 
-// Show first frame
-driftCar.src = driftFrames[frameIndex];
-driftCar.style.opacity = 1;
+// Drift sequence: move car across screen while rotating slightly
+const driftAnimation = setInterval(() => {
+  if(posX < window.innerWidth + 200){
+    posX += speed;
+    rotation = Math.sin(posX/50) * 15; // slight drift rotation
+    driftCar.style.transform = `translateY(-50%) translateX(${posX}px) rotate(${rotation}deg)`;
 
-// Animate drift frames with scale/rotation effect
-const driftInterval = setInterval(() => {
-  frameIndex++;
-  if(frameIndex < driftFrames.length){
-    driftCar.style.transform = `translateX(${frameIndex * 100}px) rotate(${frameIndex * 15}deg)`;
-    driftCar.src = driftFrames[frameIndex];
+    // Change images based on position
+    if(posX < window.innerWidth/3){
+      driftCar.src = 'Assets/Side Drift.png';
+    } else if(posX < 2*window.innerWidth/3){
+      driftCar.src = 'Assets/Front Drift.png';
+    } else {
+      driftCar.src = 'Assets/Rear Drift.png';
+    }
+
   } else {
-    clearInterval(driftInterval);
+    clearInterval(driftAnimation);
     // Fade in brand title
     brandTitle.style.opacity = 1;
 
-    // Wait 1.5 seconds then show store
+    // Wait then show store
     setTimeout(() => {
       document.getElementById("intro").style.display = "none";
       document.getElementById("store").style.display = "block";
     }, 1500);
   }
-}, 1200);
+}, 30); // 30ms for smooth animation (~33fps)

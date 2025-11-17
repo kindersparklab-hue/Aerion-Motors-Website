@@ -1,113 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AERION MOTORS</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-  body { margin: 0; font-family: Arial, sans-serif; background: #0A0A0A; color:#fff; }
-
-  /* INTRO */
-  #intro {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
-  }
-  #intro video {
-    width:100%; height:100%; object-fit:cover;
-  }
-
-  #main-content { display:none; }
-
-  /* HEADER */
-  header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-    background:#111;
-  }
-  .brand-logo {
-    height:50px;
-    cursor:pointer;
-  }
-  nav ul {
-    list-style:none;
-    display:flex;
-    gap:30px;
-    margin:0;
-  }
-  nav ul li a {
-    color:#fff; text-decoration:none; font-weight:bold;
-  }
-
-  /* HERO */
-  .hero { text-align:center; padding:100px 20px; }
-  .hero h1 { font-size:48px; margin:20px 0; color:#D31024; }
-  .cta-button {
-    display:inline-block;
-    padding:15px 30px;
-    background:#D31024;
-    color:#fff;
-    text-decoration:none;
-    border-radius:5px;
-    margin-top:20px;
-  }
-
-  /* MODAL */
-  .modal {
-    display:none;
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    z-index:2000;
-  }
-  .modal-content {
-    background:#111;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    max-width:90%;
-    color:#fff;
-  }
-  .close {
-    position:absolute;
-    top:10px; right:20px;
-    font-size:30px;
-    cursor:pointer;
-    color:#D31024;
-  }
-
-  footer {
-    background:#111;
-    padding:20px;
-    text-align:center;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AERION MOTORS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- INTRO -->
 <div id="intro">
-  <video id="intro-video" playsinline>
+  <video id="intro-video" playsinline autoplay muted>
     <source src="Assets/drift-video.mp4" type="video/mp4">
   </video>
   <audio id="drift-audio" src="Assets/drift-sound.mp3"></audio>
 </div>
 
 <!-- MAIN CONTENT -->
-<div id="main-content">
+<div id="main-content" style="display:none">
 
 <header>
   <img src="Assets/AERION MOTORS.png" class="brand-logo" id="home-logo">
@@ -125,6 +37,37 @@
   <img src="Assets/HERO CAR IMAGE.png" style="width:70%; max-width:600px;">
   <h1>Born for Speed. Built for Legends.</h1>
   <a href="store.html" class="cta-button">Explore Products</a>
+</section>
+
+<!-- Product Slider Section -->
+<section id="products-slider" class="hero">
+  <h2>Our Products</h2>
+  <div class="slider-container">
+      <div class="slider-item">
+          <img src="Assets/Carbon Fiber Spoiler.png" alt="Carbon Fiber Spoiler">
+          <h3>Carbon Fiber Spoiler</h3>
+      </div>
+      <div class="slider-item">
+          <img src="Assets/Turbo Air Filter.png" alt="Turbo Air Filter">
+          <h3>Turbo Air Filter</h3>
+      </div>
+      <div class="slider-item">
+          <img src="Assets/Titanium Sport Exhaust.png" alt="Titanium Sport Exhaust">
+          <h3>Titanium Sport Exhaust</h3>
+      </div>
+      <div class="slider-item">
+          <img src="Assets/LED Headlights.png" alt="LED Headlights">
+          <h3>LED Headlights</h3>
+      </div>
+      <div class="slider-item">
+          <img src="Assets/Racing Steering Wheel.png" alt="Racing Steering Wheel">
+          <h3>Racing Steering Wheel</h3>
+      </div>
+      <div class="slider-item">
+          <img src="Assets/Carbon Fiber Texture.png" alt="Carbon Fiber Texture">
+          <h3>Carbon Fiber Texture</h3>
+      </div>
+  </div>
 </section>
 
 <section id="about">
@@ -150,13 +93,13 @@ const introVideo = document.getElementById("intro-video");
 const introAudio = document.getElementById("drift-audio");
 const mainContent = document.getElementById("main-content");
 
-// Required by browsers — plays after first tap
-document.body.addEventListener("click", () => {
+// Autoplay video and audio as soon as the page loads
+window.addEventListener("load", () => {
     introVideo.play();
     introAudio.play();
-}, { once:true });
+});
 
-// End intro
+// End intro when video ends
 introVideo.addEventListener("ended", () => {
     intro.style.display = "none";
     mainContent.style.display = "block";
@@ -165,7 +108,7 @@ introVideo.addEventListener("ended", () => {
 
 // Logo scroll to home
 document.getElementById("home-logo").addEventListener("click", () => {
-    window.scrollTo({ top:0, behavior:"smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 

@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AERION MOTORS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AERION MOTORS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- INTRO -->
 <div id="intro">
-  <video id="intro-video" playsinline autoplay muted>
+  <video id="intro-video" playsinline>
     <source src="Assets/drift-video.mp4" type="video/mp4">
   </video>
   <audio id="drift-audio" src="Assets/drift-sound.mp3"></audio>
 </div>
 
 <!-- MAIN CONTENT -->
-<div id="main-content" style="display:none">
+<div id="main-content">
 
 <header>
   <img src="Assets/AERION MOTORS.png" class="brand-logo" id="home-logo">
@@ -39,40 +37,27 @@
   <a href="store.html" class="cta-button">Explore Products</a>
 </section>
 
-<!-- Product Slider Section -->
-<section id="products-slider" class="hero">
-  <h2>Our Products</h2>
-  <div class="slider-container">
-      <div class="slider-item">
-          <img src="Assets/Carbon Fiber Spoiler.png" alt="Carbon Fiber Spoiler">
-          <h3>Carbon Fiber Spoiler</h3>
-      </div>
-      <div class="slider-item">
-          <img src="Assets/Turbo Air Filter.png" alt="Turbo Air Filter">
-          <h3>Turbo Air Filter</h3>
-      </div>
-      <div class="slider-item">
-          <img src="Assets/Titanium Sport Exhaust.png" alt="Titanium Sport Exhaust">
-          <h3>Titanium Sport Exhaust</h3>
-      </div>
-      <div class="slider-item">
-          <img src="Assets/LED Headlights.png" alt="LED Headlights">
-          <h3>LED Headlights</h3>
-      </div>
-      <div class="slider-item">
-          <img src="Assets/Racing Steering Wheel.png" alt="Racing Steering Wheel">
-          <h3>Racing Steering Wheel</h3>
-      </div>
-      <div class="slider-item">
-          <img src="Assets/Carbon Fiber Texture.png" alt="Carbon Fiber Texture">
-          <h3>Carbon Fiber Texture</h3>
-      </div>
-  </div>
-</section>
-
 <section id="about">
   <h2>About AERION MOTORS</h2>
   <p>High-performance racing meets luxury craftsmanship.</p>
+</section>
+
+<section id="featured-products">
+  <h2>Featured Products</h2>
+  <div class="slider-container">
+    <div class="slider-item">
+      <img src="Assets/Carbon Fiber Spoiler.png" alt="Carbon Fiber Spoiler">
+      <h3>Carbon Fiber Spoiler</h3>
+    </div>
+    <div class="slider-item">
+      <img src="Assets/Turbo Air Filter.png" alt="Turbo Air Filter">
+      <h3>Turbo Air Filter</h3>
+    </div>
+    <div class="slider-item">
+      <img src="Assets/Titanium Sport Exhaust.png" alt="Titanium Sport Exhaust">
+      <h3>Titanium Sport Exhaust</h3>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
@@ -87,30 +72,6 @@
 
 </div>
 
-<script>
-const intro = document.getElementById("intro");
-const introVideo = document.getElementById("intro-video");
-const introAudio = document.getElementById("drift-audio");
-const mainContent = document.getElementById("main-content");
-
-// Autoplay video and audio as soon as the page loads
-window.addEventListener("load", () => {
-    introVideo.play();
-    introAudio.play();
-});
-
-// End intro when video ends
-introVideo.addEventListener("ended", () => {
-    intro.style.display = "none";
-    mainContent.style.display = "block";
-    introAudio.pause();
-});
-
-// Logo scroll to home
-document.getElementById("home-logo").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

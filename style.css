@@ -9,6 +9,11 @@ body {
   background-color: #0A0A0A;
   color: #fff;
   overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* INTRO */
@@ -41,16 +46,17 @@ body {
 /* MAIN CONTENT */
 #main-content {
   display: none;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   background: #111;
+  width: 100%;
 }
 
 .brand-logo {
@@ -102,22 +108,30 @@ nav ul li a {
 /* FEATURED PRODUCTS SLIDER */
 .slider-container {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
 .slider-item {
   flex: 0 0 auto;
   text-align: center;
+  width: 200px;
+  background: #111;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .slider-item img {
-  width: 200px;
-  height: 150px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(211, 16, 36, 0.5);
+}
+
+.slider-item:hover {
+  box-shadow: 0 0 25px rgba(211, 16, 36, 0.7);
 }
 
 /* PRODUCT GRID */

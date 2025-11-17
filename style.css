@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 body {
   background-color: #0A0A0A;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* INTRO */
@@ -22,7 +23,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: hidden;
 }
 
 #intro video {
@@ -32,7 +32,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 #intro audio {
@@ -45,6 +44,7 @@ body {
   padding: 20px;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -75,7 +75,7 @@ nav ul li a {
 }
 
 .hero img {
-  width: 70%;
+  width: 100%;
   max-width: 600px;
 }
 
@@ -99,10 +99,31 @@ nav ul li a {
   background: #a2081d;
 }
 
+/* FEATURED PRODUCTS SLIDER */
+.slider-container {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.slider-item img {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
 /* PRODUCT GRID */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 40px;
 }
@@ -110,7 +131,7 @@ nav ul li a {
 .product {
   text-align: center;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .product img {
@@ -120,7 +141,7 @@ nav ul li a {
 
 .product:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px 4px rgba(211, 16, 36, 0.7);
+  box-shadow: 0 0 20px rgba(211, 16, 36, 0.7);
 }
 
 /* MODAL */
@@ -151,23 +172,6 @@ nav ul li a {
   font-size: 30px;
   cursor: pointer;
   color: #D31024;
-}
-
-/* FEATURED PRODUCTS SLIDER */
-.slider-container {
-  display: flex;
-  overflow: hidden;
-}
-
-.slider-item {
-  flex: 0 0 auto;
-  margin-right: 30px;
-}
-
-.slider-item img {
-  width: 200px;
-  height: 150px;
-  border-radius: 10px;
 }
 
 /* FOOTER */

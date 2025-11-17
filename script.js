@@ -4,13 +4,11 @@ const introAudio = document.getElementById('drift-audio');
 const introDiv = document.getElementById('intro');
 const mainSite = document.getElementById('main-content');
 
-// Play video and audio when user clicks anywhere on the page
-document.body.addEventListener('click', () => {
-    driftVideo.play();
-    introAudio.play();
-}, { once: true });
+// Ensure autoplay works for both video and audio
+driftVideo.play();
+introAudio.play();
 
-// End intro and show main content after the video ends
+// End intro after video ends and fade audio
 driftVideo.addEventListener('ended', () => {
     let fadeAudio = setInterval(() => {
         if (introAudio.volume > 0.05) {

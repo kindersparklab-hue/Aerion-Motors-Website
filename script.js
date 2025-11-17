@@ -4,16 +4,18 @@ const introVideo = document.getElementById("intro-video");
 const introAudio = document.getElementById("drift-audio");
 const mainContent = document.getElementById("main-content");
 
-document.body.addEventListener("click", () => {
+// Play video and audio immediately when the page loads
+window.onload = () => {
   introVideo.play();
   introAudio.play();
-}, { once: true });
+  introAudio.loop = true; // Audio will loop as long as video is playing
+};
 
 // End intro video
 introVideo.addEventListener("ended", () => {
   intro.style.display = "none";
   mainContent.style.display = "block";
-  introAudio.pause();
+  introAudio.pause(); // Pause the audio when the video ends
 });
 
 // Scroll to home when logo is clicked
